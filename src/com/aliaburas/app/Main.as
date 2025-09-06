@@ -17,6 +17,7 @@
     import com.greensock.easing.*;
     import com.greensock.events.*;
     import com.greensock.*;
+    import flash.geom.Point;
 
     /**
 
@@ -96,7 +97,7 @@
         }
 
         private function addMoveTransition(obj:Sprite):void {
-            var position:Object = random.randomePosition(stage, BOX_W, BOX_H);
+            var position:Point = random.randomePosition(stage, BOX_W, BOX_H);
             trace(position.x, position.y)
             tween = new TweenLite(obj, 0.5, {x: position.x,
                     y: position.y, ease: Back.easeOut});
