@@ -18,6 +18,7 @@
     import com.greensock.events.*;
     import com.greensock.*;
     import flash.geom.Point;
+    import com.aliaburas.app.utils.StaticValues;
 
     /**
 
@@ -49,6 +50,7 @@
         private var btnHome:SimpleButton;
         private var chrome:Sprite;
         private var backdrop:Shape;
+        private var shapeArray:Array = [StaticValues.CIRCLE, StaticValues.RECT]
 
         private var shapeMaker:ShapeMaker;
         private var random:Random = new Random();
@@ -76,7 +78,8 @@
         }
 
         private function drawShape(color:uint):void {
-            shapeMaker.build(color);
+            trace(Math.floor(Math.random() * shapeArray.length ))
+            shapeMaker.build(color, shapeArray[Math.round(Math.random() * shapeArray.length )]);
         }
 
         private function addShapeToStage(obj:Sprite):void {
@@ -92,7 +95,7 @@
 
         private function changeColorHandler(e:MouseEvent):void {
             e.stopPropagation();
-            e.currentTarget.build(random.color24())
+            e.currentTarget.build(random.color24(), shapeArray[Math.round(Math.random() * shapeArray.length )])
             addMoveTransition(e.currentTarget as Sprite);
         }
 
