@@ -96,10 +96,10 @@
         }
 
         private function addMoveTransition(obj:Sprite):void {
-            trace('obj-> ',obj)
-            tween = new TweenLite(obj, 0.5, {x: random.randomePosition(stage, BOX_W, BOX_H).x,
-                    y: random.randomePosition(stage, BOX_W, BOX_H).y, ease: Back.easeOut});
-
+            var position:Object = random.randomePosition(stage, BOX_W, BOX_H);
+            trace(position.x, position.y)
+            tween = new TweenLite(obj, 0.5, {x: position.x,
+                    y: position.y, ease: Back.easeOut});
         }
 
 
