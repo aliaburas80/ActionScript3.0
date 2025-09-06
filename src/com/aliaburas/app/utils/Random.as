@@ -8,10 +8,9 @@ package com.aliaburas.app.utils {
         }
 
         public function randomePosition(stage:Stage, BOX_W:uint, BOX_H:uint):Object {
-            return {
-                x:Math.round((stage.stageWidth - BOX_W) * 0.5),
-                y:Math.round((stage.stageHeight - BOX_H) * 0.5)
-            }
+            var obj:Object = {x: Math.round((stage.stageWidth - BOX_W * (Math.random() * 1)) * 0.5),
+                    y: Math.round((stage.stageHeight - BOX_H * (Math.random() * 1)) * 0.5)}
+            return obj
         }
 
         public function color24():uint {
