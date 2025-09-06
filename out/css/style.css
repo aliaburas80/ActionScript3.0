@@ -1,0 +1,241 @@
+html,
+body {
+  clear: both;
+  padding: 0;
+  margin: 0;
+}
+
+#AliStudyContainer {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 16px;
+  transition: all 0.5s ease-out;
+}
+#AliStudyContainer .sectionButton {
+  background-color: #5CEEF7;
+  padding: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+#AliStudyContainer .sectionButton.selected {
+  background-color: #21422E;
+  color: #CDF0DB;
+}
+#AliStudyContainer .content {
+  transition: all 0.5s ease-out;
+  margin-left: 20px;
+  background-color: #CDE0F0;
+  padding: 5px;
+  border-radius: 5px;
+}
+#AliStudyContainer .sectionContent {
+  transition: opacity 0.5s ease-out;
+  margin-bottom: 20px;
+}
+#AliStudyContainer .sectionContentShow {
+  transition: opacity 0.5s ease-out;
+  display: block;
+  -webkit-animation: fadeInFromNone 0.5s ease-out;
+  -moz-animation: fadeInFromNone 0.5s ease-out;
+  -o-animation: fadeInFromNone 0.5s ease-out;
+  animation: fadeInFromNone 0.5s ease-out;
+}
+#AliStudyContainer .sectionContentHide {
+  transition: opacity 0.5s ease-out;
+  display: none;
+  opacity: 0px;
+  -webkit-animation: fadeOutFrom100 0.5s ease-out;
+  -moz-animation: fadeOutFrom100 0.5s ease-out;
+  -o-animation: fadeOutFrom100 0.5s ease-out;
+  animation: fadeOutFrom100 0.5s ease-out;
+}
+#AliStudyContainer .content ol {
+  padding: 5px;
+  margin-left: 3%;
+}
+#AliStudyContainer .content ol li {
+  margin-bottom: 20px;
+}
+#AliStudyContainer .type {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #A8DB99;
+  color: #2e2809;
+}
+#AliStudyContainer .discription {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #ECAA76;
+  color: #342E29;
+  margin-bottom: 5px;
+}
+#AliStudyContainer .example {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #2e2809;
+  color: #f0cb11;
+}
+#AliStudyContainer code {
+  margin: 5px;
+  display: block;
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+}
+#AliStudyContainer code.inline {
+  display: inline-block;
+}
+#AliStudyContainer error {
+  margin: 5px;
+  display: block;
+  background-color: #740b0b;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+  color: blanchedalmond;
+}
+#AliStudyContainer .important {
+  color: #F83906;
+  background-color: #2e2809;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  margin: 10px 0;
+}
+#AliStudyContainer .keyword {
+  color: #3FA1F7;
+  font-weight: bold;
+}
+#AliStudyContainer .caluclater button {
+  width: 35px;
+  height: 35px;
+}
+#AliStudyContainer .caluclater .buttonsContainer,
+#AliStudyContainer .caluclater .operations {
+  display: inline-block;
+}
+#AliStudyContainer .caluclater .operations button {
+  display: block;
+}
+#AliStudyContainer .caluclater .btnstyle1 {
+  width: 35px;
+}
+#AliStudyContainer .caluclater .btnstyle2 {
+  width: 75px;
+}
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOutFrom100 {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  1% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeOutFrom100 {
+  0% {
+    display: block;
+    opacity: 1000;
+  }
+  1% {
+    display: block;
+    opacity: 100;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeOutFrom100 {
+  0% {
+    display: block;
+    opacity: 100;
+  }
+  1% {
+    display: block;
+    opacity: 100;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+@keyframes fadeOutFrom100 {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  1% {
+    display: block;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../out/css/guessMyNumber.css">
+    <title>guess My Number Javascript</title>
+</head>
+<body>
+    <div class="gameContainer" id='gameContainer'>
+        <h1 class="gameTitle">Guess My Number</h1>
+        <div class="gameDescriptions"> I keep in my mind number between <h3 class="higlihgt">1</h3> to <h3 class="higlihgt">20</h3> and you have to guess what's. <br> You have 3 chances to guess</div>
+        <div class="guesseNumber">?</div>
+        <div class="inputNumber">
+            <input type="text" type="text" class="inputNumberFeild" value="0"  maxlength="2" onkeypress="return inputCheckTextHandler(event)">
+        </div>
+        <div class="button"> Check Your Guess!</div>
+        <!-- <div class="score"> Your score is : <span class="scoreValue">1</span> 🎉 </div> -->
+        <div class="lives"> Lives  <span class="livesNumber">3</span> <span class="LiveEmoji">😍</span> </div>
+        <div class="button reset"> Reset </div>
+    </div>
+    <script src="../../out/js/main.js"></script>
+</body>
+</html>
+
+
+<!-- 
+    the containes the following 
+    1- reset button 
+    2- input text to enter guessed number 
+    3- check button 
+    4- score
+    5- title
+ -->
