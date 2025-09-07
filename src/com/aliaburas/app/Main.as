@@ -50,7 +50,8 @@
         private var btnHome:SimpleButton;
         private var chrome:Sprite;
         private var backdrop:Shape;
-        private var shapeArray:Array = [StaticValues.CIRCLE, StaticValues.RECT]
+        private var shapeArray:Array = [StaticValues.CIRCLE, StaticValues.RECT];
+        private static var FALLBACK_SHAPE:String = StaticValues.RECT;
 
         private var shapeMaker:ShapeMaker;
         private var random:Random = new Random();
@@ -78,8 +79,7 @@
         }
 
         private function drawShape(color:uint):void {
-            trace(Math.floor(Math.random() * shapeArray.length ))
-            shapeMaker.build(color, shapeArray[Math.round(Math.random() * shapeArray.length )]);
+            shapeMaker.build(color, setRandomeShape(shapeArray));
         }
 
         private function addShapeToStage(obj:Sprite):void {
@@ -95,15 +95,35 @@
 
         private function changeColorHandler(e:MouseEvent):void {
             e.stopPropagation();
-            e.currentTarget.build(random.color24(), shapeArray[Math.round(Math.random() * shapeArray.length )])
+            e.currentTarget.build(random.color24(), setRandomeShape(shapeArray))
             addMoveTransition(e.currentTarget as Sprite);
         }
 
         private function addMoveTransition(obj:Sprite):void {
-            var position:Point = random.randomePosition(stage, BOX_W, BOX_H);
-            trace(position.x, position.y)
+            var position:Point = setRandomePosition();
             tween = new TweenLite(obj, 0.5, {x: position.x,
-                    y: position.y, ease: Back.easeOut});
+                    y: position.y, ease: Back.easeOut, onComplete: function():void {
+                        trace('Stage: ', stage.stageWidth, stage.stageHeight)
+                        trace('point: ', position.x, position.y)
+                    }});
+        }
+
+        public static function setRandomeShape(shapeArray:Array):String {
+            if (!shapeArray || shapeArray.length == 0)
+                return FALLBACK_SHAPE;
+            var idx:int = int(Math.random() * shapeArray.length);
+            var s:String = shapeArray[idx] as String;
+            if (s == null || s.length == 0)
+                return setRandomeShape(shapeArray);
+            return s;
+        }
+
+        private function setRandomePosition():Point {
+            var p:Point = random.randomePosition(stage, BOX_W, BOX_H);
+            if (p.x > stage.stageWidth - shapeMaker.width || p.y > stage.stageHeight - shapeMaker.height || p.x < shapeMaker.width || p.y < shapeMaker.height) {
+                setRandomePosition();
+            }
+            return p
         }
 
 

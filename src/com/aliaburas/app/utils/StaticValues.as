@@ -8,7 +8,5 @@ package com.aliaburas.app.utils {
         public static const RECT:String = 'rect';
         public static const ROUND_RECT_COMPLEX:String = 'roundRectComplex';
         public static const TEIANGLES:String = 'triangles';
-        public function StaticValues() {
-        }
     }
 }
